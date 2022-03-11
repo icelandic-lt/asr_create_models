@@ -15,6 +15,7 @@ model_root_dir=../models
 model_dir=$model_root_dir/20211012 # This is a TSC model dir form where we get the acoustic model 
 pron_dict=$model_root_dir/prondict.20220208.tsv
 model_key='trivia'
+stage=-1
 
 lm_order=3
 
@@ -22,9 +23,6 @@ lm_order=3
 dictdir=data/dict
 langdir=data/lang
 lexicon=data/trivia_lexicon
-
-
-
 export_dir=$model_root_dir/${model_key}_${lm_order}g
 
 
@@ -124,7 +122,8 @@ fi
 if [ $stage -le 5 ]; then
     if [ ! -d $export_dir ]; then mkdir $export_dir; fi;
     cp -r $model_dir/{conf,ivector_extractor,final.mdl,frame_subsampling_factor,main.conf,phones.txt,tree,norm} $export_dir/. 
-    mkdir -p $export_dir/graph
     
-    cp -r exp/${model_key}_${lm_order}g_graph $export_dir/. && mv $export_dir/${model_key}_${lm_order}g_graph $export_dir/grap
+    cp data/lang_${lm_order}g/G.carpa $export_dir/.
+    cp -r exp/${model_key}_${lm_order}g_graph $export_dir/.
+    mv $export_dir/${model_key}_${lm_order}g_graph $export_dir/graph
 fi

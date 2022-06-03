@@ -17,7 +17,7 @@ model_name='trivia-2022-05-31'
 data=$model_name
 exp=$data/exp
 
-model_root_dir=../models
+model_root_dir=models
 model_dir=$model_root_dir/20211012 # This is a TSC model dir from where we get the acoustic model 
 pron_dict=$model_root_dir/prondict.20220208.tsv
 
@@ -133,12 +133,13 @@ if [ $stage -le 4 ]; then
         $exp/${model_name}_${lm_order}g_graph
 fi
 
-# Create a bundle for TSC
+# Create a bundle for TSC and upload tar ball to git lfs
 if [ $stage -le 5 ]; then
-    cp -r $model_dir/{conf,ivector_extractor,final.mdl,frame_subsampling_factor,main.conf,phones.txt,tree,norm} $export_dir/. 
+    cp -r $model_dir/{conf,ivector_extractor,final.mdl,frame_subsampling_factor,main.conf,phones.txt,tree} $export_dir/. 
     mkdir -p $export_dir/graph
     
-    cp -r $exp/${model_name}_${lm_order}g_graph $export_dir/. && mv $export_dir/${model_name}_${lm_order}g_graph $export_dir/grap
+    cp -r $exp/${model_name}_${lm_order}g_graph $export_dir/. && mv $export_dir/${model_name}_${lm_order}g_graph $export_dir/graph
+    tar -czvf  "${export_dir}.tar.gz" $export_dir
 fi
 
 

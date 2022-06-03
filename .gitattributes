@@ -1,3 +1,6 @@
-trivia-2022-05-31/** filter=lfs diff=lfs merge=lfs -text
-unit-conversion-2022-05-17/** filter=lfs diff=lfs merge=lfs -text
-models/** filter=lfs diff=lfs merge=lfs -text
+models/trivia-2022-05-31_3g.tar.gz filter=lfs diff=lfs merge=lfs -text
+models/unit-conversion-170522_3g.tar.gz filter=lfs diff=lfs merge=lfs -text
+trivia-2022-05-31/lexicon filter=lfs diff=lfs merge=lfs -text
+unit-conversion-2022-05-17/lexicon filter=lfs diff=lfs merge=lfs -text
+trivia-2022-05-31/train filter=lfs diff=lfs merge=lfs -text
+unit-conversion-2022-05-17/train filter=lfs diff=lfs merge=lfs -text

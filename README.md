@@ -7,7 +7,7 @@ This repo conatins a recepie for creating Kaldi language models from a few data 
 Models and training data is stored using Git LFS. Install Git LFS and run the following command to get the data. 
 ```
 git lfs fetch --all
-``
+```
 
 # Acknowledgements
 This project was funded by the Language Technology Programme for Icelandic 2019-2023. The programme, which is managed and coordinated by Almannarómur, is funded by the Icelandic Ministry of Education, Science and Culture.

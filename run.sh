@@ -12,7 +12,7 @@
 
 run_test=true
 
-stage=6
+stage=0
 model_name=$1
 # d=`date +%F`
 d="sept"
@@ -210,7 +210,7 @@ if [ $stage -le 6 ] && [ $run_test = true ]; then
     # model to a larger speech recognizer. The trained model should be 
     # alot more acurate.
     # Create the test data
-    ./tools/create_test_recs.py $data
+    # ./tools/create_test_recs.py $data
     
     # Pop open a new termianl and start the server 
     gnome-terminal -- bash -c "./tools/start_TSC_server.sh $PWD/$export_dir 50051; exec bash" 
@@ -262,6 +262,7 @@ fi
 
 # done
 
-# for x in  "trivia-sept" "addresses-sept" "kennitolur-sept" "names-sept" "phone_numbers-sept"; do 
-#     ./run.sh $x 
+# for x in  "trivia-sept" "addresses-sept" "kennitolur-sept" "names-sept" "phone_numbers-sept" "unit-conversion-sept"; do 
+#     model=models/${x}_4g
+#     cp data/$x/test $model/.
 # done

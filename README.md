@@ -104,6 +104,10 @@ We generated a long list of possible identification numbers and normalized each 
 The phone numbers were generated and normalized in a similar way to the personal identification numbers. We generated a list of possible phone numbers and spelled each one out in nine different ways to allow for different readings of the numbers.
 
 
+# Results 
+
+
+
 
 # Acknowledgements
 This project was funded by the Language Technology Programme for Icelandic 2019-2023. The programme, which is managed and coordinated by Almannarómur, is funded by the Icelandic Ministry of Education, Science and Culture.
